@@ -1,11 +1,12 @@
+#include <stdio.h>
 #include <SDL2/SDL.h>
+#include "./constants.h"
+
 
 int game_is_running = FALSE;
 SDL_Window* window = NULL;
 SDL_Renderer* renderer = NULL;
 int last_frame_time = 0;
-
-
 
 int initialize_window(void) {
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
