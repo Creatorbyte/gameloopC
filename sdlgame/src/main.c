@@ -31,7 +31,7 @@ void setup(void) {
     wall.width = WINDOW_WIDTH; 
     wall.height = WINDOW_HEIGHT/5;
     wall.x = 0;//(WINDOW_WIDTH / 2) - (wall.width / 2);
-    wall.y =WINDOW_HEIGHT - 100;
+    wall.y =WINDOW_HEIGHT - (WINDOW_HEIGHT/3);
     wall.vel_x = 0;
     wall.vel_y = 0;
 }
@@ -65,9 +65,9 @@ void update(void) {
     }
     
     //if bounce was too small -> bump into air
-    if (sqrt(ball.vel_y * ball.vel_y) < 0.01) {
-        ball.vel_x = rand()/500;
-        ball.vel_y = rand()/500;
+    if (abs(ball.vel_y) < 0.01) {
+        ball.vel_x = rand()/1000;
+        ball.vel_y = rand()/1000;
     } else {
         ball.y += ball.vel_y;
     }
